@@ -485,7 +485,7 @@ const BillTracker = () => {
                   key={bill.id}
                   className="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
                 >
-                  <div>
+                  <div className="flex-1">
                     <p className="font-semibold text-gray-800">{bill.name}</p>
                     <p className="text-sm text-gray-500">
                       {new Date(bill.date).toLocaleDateString('en-US', { 
@@ -497,13 +497,19 @@ const BillTracker = () => {
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="text-xl font-bold text-green-600">
-                      ${bill.amount.toFixed(2)}
+                      ${parseFloat(bill.amount).toFixed(2)}
                     </span>
                     <button
-                      onClick={() => deleteBill(bill.id)}
-                      className="text-red-500 hover:text-red-700 transition-colors text-2xl font-bold px-2"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (confirm(`Delete ${bill.name}?`)) {
+                          deleteBill(bill.id);
+                        }
+                      }}
+                      className="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-3 rounded transition-colors"
+                      style={{ minWidth: '60px' }}
                     >
-                      ×
+                      Delete
                     </button>
                   </div>
                 </div>
