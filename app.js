@@ -324,7 +324,7 @@ const BillTracker = () => {
         <div className="bg-white rounded-2xl shadow-xl p-6 mb-6">
           <div className="flex items-center justify-between mb-6">
             <h1 className="text-3xl font-bold text-gray-800 flex items-center gap-2">
-              <Icon name="dollar-sign" className="text-green-600" />
+              <span className="text-green-600">$</span>
               Bill Tracker
             </h1>
             <div className="flex gap-2">
@@ -333,7 +333,7 @@ const BillTracker = () => {
                 className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
                 title="Share data"
               >
-                <Icon name="share-2" size={20} />
+                <span>↗</span>
                 <span className="hidden sm:inline">Share</span>
               </button>
               <button
@@ -341,12 +341,12 @@ const BillTracker = () => {
                 className="flex items-center gap-2 px-4 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors"
                 title="Export backup"
               >
-                <Icon name="download" size={20} />
+                <span>↓</span>
                 <span className="hidden sm:inline">Export</span>
               </button>
               <label className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors cursor-pointer"
                 title="Import backup">
-                <Icon name="upload" size={20} />
+                <span>↑</span>
                 <span className="hidden sm:inline">Import</span>
                 <input
                   type="file"
@@ -465,7 +465,7 @@ const BillTracker = () => {
             }}
             className="w-full flex items-center justify-center gap-2 bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors"
           >
-            <Icon name="plus" />
+            <span className="text-xl">+</span>
             Add New Bill
           </button>
         </div>
@@ -473,7 +473,7 @@ const BillTracker = () => {
         {/* Bills List */}
         <div className="bg-white rounded-2xl shadow-xl p-6">
           <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-            <Icon name="calendar" className="text-indigo-600" />
+            <span className="text-indigo-600">📅</span>
             This Week's Bills
           </h3>
           <div className="space-y-2">
